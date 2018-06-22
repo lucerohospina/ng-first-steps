@@ -1,0 +1,31 @@
+<div class="container">
+  <label for="">Server Name</label>
+  <input type="text" class="form-control"
+  (input)="onUpdateServerName($event)">
+  <button class="btn btn-primary" [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Add service</button>
+
+  <p>{{ serverName }}</p>
+  
+  <!--  String Interpolation 
+  Output something on template, print some text -->
+  <p>{{ allowNewServer}}</p>
+  
+  <!-- Property Binding 
+  Change some property of an HTML element or of a directive-->
+  <p [innerText]="!allowNewServer"></p>
+
+  <p>{{ serverCreationStatus }}</p>
+  <app-server></app-server>
+  <app-server></app-server>
+
+  <label for="">Server Name 2</label>
+  <input type="text" class="form-control"
+  [(ngModel)]="serverName">
+  <button class="btn btn-primary" [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Add service</button>
+
+</div>
+
+
+
